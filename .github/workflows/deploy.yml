@@ -1,0 +1,15 @@
+name: my workflow
+on:
+  push:
+    branches:
+      - main
+      - dev
+jobs:
+  exec:
+    environment: shell
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: run the code
+        run: bash -x Hello.sh
